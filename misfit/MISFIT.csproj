@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C46EF60-9369-4555-B609-BE9D20D8DF25}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MISFIT</RootNamespace>
+    <AssemblyName>MISFIT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.0.3.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1532_Flag_Blue.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MISFIT.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Emailer.cs" />
+    <Compile Include="frmAddWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddWork.Designer.cs">
+      <DependentUpon>frmAddWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="frmAutoConfigCrap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutoConfigCrap.Designer.cs">
+      <DependentUpon>frmAutoConfigCrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMISFIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMISFIT.Designer.cs">
+      <DependentUpon>frmMISFIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.Designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileEdit.Designer.cs">
+      <DependentUpon>frmFileEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGIOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGIOM.Designer.cs">
+      <DependentUpon>frmGIOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRemoteControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRemoteControl.Designer.cs">
+      <DependentUpon>frmRemoteControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSafeErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSafeErrorDialog.Designer.cs">
+      <DependentUpon>frmSafeErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuspendAutomation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuspendAutomation.Designer.cs">
+      <DependentUpon>frmSuspendAutomation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWrapUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWrapUp.designer.cs">
+      <DependentUpon>frmWrapUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gimps.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Gpu72.cs" />
+    <Compile Include="MsgBox.cs" />
+    <Compile Include="Productivity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteControl.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="WebIO.cs" />
+    <Compile Include="Win32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="frmAddWork.resx">
+      <DependentUpon>frmAddWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAutoConfigCrap.resx">
+      <DependentUpon>frmAutoConfigCrap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMISFIT.resx">
+      <DependentUpon>frmMISFIT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileEdit.resx">
+      <DependentUpon>frmFileEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGIOM.resx">
+      <DependentUpon>frmGIOM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRemoteControl.resx">
+      <DependentUpon>frmRemoteControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSafeErrorDialog.resx">
+      <DependentUpon>frmSafeErrorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuspendAutomation.resx">
+      <DependentUpon>frmSuspendAutomation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWrapUp.resx">
+      <DependentUpon>frmWrapUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1532_Flag_Blue.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

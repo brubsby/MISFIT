@@ -1,0 +1,1 @@
+MISFIT source code has no specific license, but by my physically posting it on publically accessible venues it is easy to imply you can use it.  I make no warranties of the source code in any way.  Use at your own risk. 

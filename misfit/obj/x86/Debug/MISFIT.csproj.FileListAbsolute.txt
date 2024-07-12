@@ -1,0 +1,108 @@
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\bin\Debug\MISFIT.exe.config
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\bin\Debug\MISFIT.exe
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\bin\Debug\MISFIT.pdb
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.csprojResolveAssemblyReference.cache
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmAddWork.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmAutoConfigCrap.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.Form1.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmConfig.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmTextEditor.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmGIMPSresultsUpload.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmRemoteControl.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmSafeErrorDialog.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmSuspendAutomation.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.frmWrapUp.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.Properties.Resources.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.csproj.GenerateResource.Cache
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.exe
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.9.5(source)\misfit\obj\x86\Debug\MISFIT.pdb
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.exe.config
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.exe
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.pdb
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.exe
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.pdb
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.csprojResolveAssemblyReference.cache
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmAddWork.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmAutoConfigCrap.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.Form1.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmConfig.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmTextEditor.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmGIMPSresultsUpload.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmRemoteControl.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmSafeErrorDialog.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmSuspendAutomation.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmWrapUp.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.Properties.Resources.resources
+C:\Users\SCOTT\Documents\Visual Studio 2013\Projects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.csproj.GenerateResource.Cache
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.exe.config
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.exe
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.pdb
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.exe
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.pdb
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.csprojResolveAssemblyReference.cache
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmAddWork.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmAutoConfigCrap.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.Form1.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmConfig.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmTextEditor.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmGIMPSresultsUpload.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmRemoteControl.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmSafeErrorDialog.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmSuspendAutomation.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmWrapUp.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.Properties.Resources.resources
+C:\Users\scott\Documents\DevProjects\MISFIT-PROJECTS\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.csproj.GenerateResource.Cache
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.exe.config
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.exe
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.pdb
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.exe
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\bin\Debug\MISFIT.pdb
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.csprojResolveAssemblyReference.cache
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmAddWork.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmAutoConfigCrap.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.Form1.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmConfig.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmTextEditor.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmGIMPSresultsUpload.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmRemoteControl.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmSafeErrorDialog.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmSuspendAutomation.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.frmWrapUp.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.Properties.Resources.resources
+C:\Users\scott\Documents\MISFIT.2.10.0(source)\misfit\obj\x86\Debug\MISFIT.csproj.GenerateResource.Cache
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\bin\Debug\MISFIT.exe.config
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.exe
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.pdb
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\bin\Debug\MISFIT.exe
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\bin\Debug\MISFIT.pdb
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.csprojResolveAssemblyReference.cache
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmAddWork.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmAutoConfigCrap.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.Form1.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmConfig.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmTextEditor.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmGIMPSresultsUpload.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmRemoteControl.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmSafeErrorDialog.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmSuspendAutomation.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmWrapUp.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.Properties.Resources.resources
+C:\Users\scott\Documents\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.csproj.GenerateResource.Cache
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\bin\Debug\MISFIT.exe.config
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.exe
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.pdb
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\bin\Debug\MISFIT.exe
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\bin\Debug\MISFIT.pdb
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.csprojResolveAssemblyReference.cache
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmAddWork.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmAutoConfigCrap.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.Form1.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmConfig.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmTextEditor.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmGIMPSresultsUpload.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmRemoteControl.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmSafeErrorDialog.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmSuspendAutomation.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.frmWrapUp.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.Properties.Resources.resources
+I:\os_shared_root\GIMPS\TF\MISFIT_DEV\MISFIT.2.10.1(source)\MISFIT.2.10.1(source)\misfit\obj\x86\Debug\MISFIT.csproj.GenerateResource.Cache
