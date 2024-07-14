@@ -34,13 +34,13 @@ namespace MISFIT
         
         
         
-        public static List<string> FetchWork(int number,string userid, string password)
+        public static List<string> FetchWork(int number, string userid, string password)
         {
             string response = string.Empty;
             List<string> AssignmentList = new List<string>();
 
             WebIO webIO = new WebIO();
-            response = webIO.GetWorkGIMPS(userid,password, 1, number, WebIO.GIMPSPreferredWorkType.TrialFactoring, null, null);
+            response = webIO.GetWorkGIMPS(userid, password, number, null, WebIO.GIMPSWorkPreference.WhatMakesSense, null, null, WebIO.GIMPSWorkPreference2.WhatMakesSense, null);
             Debug.WriteLine(response);
             Globals.LogWebIO("GIMPSASSIGNMENTSFETCH", response, Globals.FILE_EXT_TXT);
 
@@ -74,18 +74,16 @@ namespace MISFIT
         {
             const string BeginBlockMarker = "<!--BEGIN_ASSIGNMENTS_BLOCK-->";
             const string EndBlockMarker = "<!--END_ASSIGNMENTS_BLOCK-->";
-            const string UserValidationPhrase = "PROCESSING_VALIDATION:ASSIGNED TO ";
+            //const string UserValidationPhrase = "PROCESSING_VALIDATION:ASSIGNED TO ";
 
-            if (html.Contains(BeginBlockMarker) && html.Contains(EndBlockMarker) && html.Contains(Globals.PHRASE_WORKTODO_EXPONENT_ROW) && html.Contains(UserValidationPhrase))
+            if (html.Contains(BeginBlockMarker) && html.Contains(EndBlockMarker) && html.Contains(Globals.PHRASE_WORKTODO_EXPONENT_ROW) /*&& html.Contains(UserValidationPhrase)*/)
             {
-                  html = html.Replace("\n", "\r\n"); //remove the unix style terminator and add a windows CRLF terminator
-                  html = html.Replace(BeginBlockMarker,String.Empty);
-                  html = html.Remove(html.IndexOf(EndBlockMarker));  //remove everyting after from the END of the block onward.
-                  html = html.Trim();
-                 // html = html.Replace(Keyword2, String.Empty);
-                  //html = html.Replace(UserValidationPhrase, String.Empty);
-                  Debug.WriteLine("new factors html " + html);
-
+                html = html.Replace("\n", "\r\n"); //remove the unix style terminator and add a windows CRLF terminator
+                int startIndex = html.IndexOf(BeginBlockMarker) + BeginBlockMarker.Length;
+                int endIndex = html.IndexOf(EndBlockMarker);
+                html = html.Substring(startIndex, endIndex-startIndex);
+                html = html.Trim();
+                Debug.WriteLine("new factors html " + html);
             }
             else
             {

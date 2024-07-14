@@ -5,6 +5,8 @@ using System.Text;
 using System.Net;
 using System.IO;
 using System.Diagnostics;
+using System.Security.Policy;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MISFIT
 {
@@ -15,15 +17,21 @@ namespace MISFIT
 		
 		private CookieContainer _cookieJar;
 
-        public enum GIMPSPreferredWorkType
+        public enum GIMPSWorkPreference
         {
-            WorldRecordTests = 102,
-            SmallestAvailableFirstTimeTests = 100,
-            DoubleCheckTests = 101,
-            P1Factoring = 4,
-            TrialFactoring = 2,
-            ECMFactoring = 5,
-            HundredMillionDigitTest = 104
+            WhatMakesSense = 1,
+            TFForDoubleChecks = 2,
+            TFForFTC = 3,
+            TFFor100M = 4
+        }
+
+        public enum GIMPSWorkPreference2
+        {
+            WhatMakesSense = 1,
+            LowestBitLevels = 2,
+            HighestBitLevels = 3,
+            LowestExponents = 4,
+            HighestExponents = 5
         }
 
 
@@ -36,7 +44,7 @@ namespace MISFIT
             req.Headers["Authorization"] = "Basic " + authInfo;
         }
 
-        public string GetWorkGPUto72(string url, int number, int low, int high, int pledge, int option, string userid,string password,int GhDz)
+        public string GetWorkGPUto72(string url, int number, int low, int high, int pledge, int option, string userid, string password,int GhDz)
         {
             string postData;
              _cookieJar = new CookieContainer();
@@ -88,7 +96,7 @@ namespace MISFIT
 
 
 
-       public static string PerformGetWithNOCookies(string url)
+        public static string PerformGetWithNOCookies(string url)
         {
 
             HttpWebRequest web = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -109,30 +117,59 @@ namespace MISFIT
 		{
 			_userName = userName;
 			_password = password;
-			_cookieJar = new CookieContainer();
-            //return PerformGet("https://www.mersenne.org/account/?user_login=" + _userName + "&user_password=" + _password + "&B1=GO");
-            return PerformGetWithCookies("https://www.mersenne.org/account/default_legacy.php?user_login=" + _userName + "&B1=GO");
-           
-		}
+
+            string url = "https://www.mersenne.org/account/?user_login=" + _userName + "&user_password=" + _password;
+            string postData;
+            _cookieJar = new CookieContainer();
+
+            HttpWebRequest web = (HttpWebRequest)HttpWebRequest.Create(url);
+            web.CookieContainer = _cookieJar;
+            web.Method = WebRequestMethods.Http.Post;
+            web.ContentType = "application/x-www-form-urlencoded";
+            web.Accept = "text/html, application/xhtml+xml, */*";
+            web.UserAgent = Globals.GetUserAgentString();
+            web.Headers.Add("Accept-Language: en-US");
+            
+            postData = string.Format("user_login={0}&user_password={1}", userName, password);
+
+            web.ContentLength = postData.Length;
+
+            using (Stream requestStream = web.GetRequestStream())
+            {
+                StreamWriter reqWriter = new StreamWriter(requestStream);
+                reqWriter.Write(postData.ToString());
+                reqWriter.Flush();
+            }
+
+            // Read the response
+            using (StreamReader responseStream = new StreamReader(web.GetResponse().GetResponseStream()))
+            {
+                return responseStream.ReadToEnd();
+            }
+        }
 
 
 
 
 
-        public string GetWorkGIMPS(string userID, string password,int cores, int assignmentsPerCore, GIMPSPreferredWorkType workType, int? expStart, int? expEnd)
+        public string GetWorkGIMPS(string userName, string password, int? assignments, int? assignmentsGHZ, GIMPSWorkPreference workPref, int? expStart, int? expEnd, GIMPSWorkPreference2 workPref2, int? factorTo)
         {
-            string url = "https://www.mersenne.org/manual_assignment/misfit.php?uid=" + userID +
-                  //"&user_password=" + password +
-                  "&cores=" + cores +
-                  "&num_to_get=" + assignmentsPerCore +
-                  "&pref=" + (int)workType +
+            LoginGIMPS(userName, password);
+
+            string url = "https://www.mersenne.org/manual_gpu_assignment/?" +
+                  "&num_to_get=" + assignments +
+                  "&ghz_to_get=" + assignmentsGHZ +
+                  "&pref=" + (int)workPref +
                   "&exp_lo=" + expStart +
                   "&exp_hi=" + expEnd +
-                  "&B1=Get+Assignments";
+                  "&pref2=" + (int)workPref2 +
+                  "&factor_to=" + factorTo +
+                  "&B1=1";
 
             Debug.WriteLine(url);
 
-            return PerformGetWithNOCookies(url);
+
+            return PerformGetWithCookies(url);
         }
 
 
