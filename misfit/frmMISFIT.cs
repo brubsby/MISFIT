@@ -372,13 +372,13 @@ namespace MISFIT
 
         
 
-        private int FetchMISFITversion()
+        private int FetchMISFITversion(Boolean prerelease = false)
         {
             const string marker = "MISFITR-";
             int startMarker = 0;
 
 
-            string data = WebIO.PerformGetWithNOCookies(Globals.URI_MISFIT_DOWLOADS_PAGE);
+            string data = WebIO.FetchReleaseVersions();
             Debug.WriteLine(data);
             startMarker = data.IndexOf(marker);
             if (startMarker > 0)
@@ -389,7 +389,7 @@ namespace MISFIT
             }
             else
             {
-                throw new Exception("No version number found at " + Globals.URI_MISFIT_DOWLOADS_PAGE);
+                throw new Exception("No version number found at " + Globals.URI_MISFIT_LIST_RELEASES_API);
             }
 
 
@@ -1262,7 +1262,7 @@ namespace MISFIT
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Globals.simpleMessageBox("MFAKTx Internet Service Function Integration Tool (MISFIT)\r\nConcept and coding by SWL551\r\nAdditional contributions by\r\nJMLX\r\nNORMANRKN\r\nKLADNER\r\nCHALSALL\r\nKRACKER\r\nM.WIEDMANN\r\nFLASHJH\r\nDUBSLOW\r\nBDOT\r\nComments to MISFIT.SUPPORT@OUTLOOK.COM");
+            Globals.simpleMessageBox("MFAKTx Internet Service Function Integration Tool (MISFIT)\r\nConcept and original coding by SWL551\r\nThis fork by TBUSBY\r\nAdditional contributions by\r\nJMLX\r\nNORMANRKN\r\nKLADNER\r\nCHALSALL\r\nKRACKER\r\nM.WIEDMANN\r\nFLASHJH\r\nDUBSLOW\r\nBDOT\r\nComments to the MISFIT subforum at\r\nmersenneforum.org/forumdisplay.php?f=103\r\nor\r\ngithub.com/brubsby/MISFIT/issues");
         }
 
 
@@ -1830,29 +1830,40 @@ namespace MISFIT
        
         private void mersenneUncreditedStatsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://www.mersenne.ca/");
+            LaunchLink("https://www.mersenne.ca/");
         }
 
         private void gIMPSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://www.mersenne.org/");
+            LaunchLink("https://www.mersenne.org/");
         }
 
         private void theGPU272ProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://www.gpu72.com/");
+            LaunchLink("https://www.gpu72.com/");
         }
 
         private void mersenneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://mersenneforum.org");
+            LaunchLink("https://mersenneforum.org/index.php");
         }
 
-       
+        private void mersenneMISFITToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LaunchLink("https://www.mersenneforum.org/forumdisplay.php?f=103");
+        }
+
+        private void issueReportMISFITToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LaunchLink("https://github.com/brubsby/MISFIT/issues");
+        }
+
+
+
 
         private void editPadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://notepad-plus-plus.org/");
+            LaunchLink("https://notepad-plus-plus.org/");
         }
 
 
@@ -3220,23 +3231,23 @@ namespace MISFIT
 
         private void DiskCryptorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("https://veracrypt.codeplex.com/wikipage?title=Introduction");
+            LaunchLink("https://www.veracrypt.fr/en/Home.html");
         }
 
         private void teamViewerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://www.teamviewer.com");
+            LaunchLink("https://www.teamviewer.com");
         }
 
         private void winRarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://www.win-rar.com");
+            LaunchLink("https://www.win-rar.com");
         }
 
 
         private void xnViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LaunchLink("http://www.xnview.com/en/xnview/");
+            LaunchLink("https://www.xnview.com/en/xnview/");
         }
 
 
@@ -3335,7 +3346,10 @@ namespace MISFIT
 
         private void checkNewerversionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
+            Globals.simpleMessageBox("Automatic version checking not yet fixed, your current version is " + Globals.VERSION_MISFIT_STRING + ", opening URL to MISFIT releases page");
+            LaunchLink(Globals.URI_MISFIT_DOWLOADS_PAGE);
+            // TODO: actually use github releases api to figure out if user needs a new version
+            /*try
             {
                 this.Cursor = Cursors.WaitCursor;
                 int OnlineVersion = FetchMISFITversion();
@@ -3363,7 +3377,7 @@ namespace MISFIT
             finally
             {
                 this.Cursor = Cursors.Default;
-            }
+            }*/
         }
 
         private void wrapUpProcessingToolStripMenuItem_Click(object sender, EventArgs e)

@@ -95,6 +95,22 @@ namespace MISFIT
 		}
 
 
+        public static string FetchReleaseVersions()
+        {
+
+            HttpWebRequest web = (HttpWebRequest)HttpWebRequest.Create(Globals.URI_MISFIT_LIST_RELEASES_API);
+            web.UserAgent = Globals.GetUserAgentString();
+            web.Method = WebRequestMethods.Http.Get;
+            web.Accept = "application/vnd.github+json";
+            web.Headers.Add("X-GitHub-Api-Version: 2022-11-28");
+            WebResponse response = web.GetResponse();
+
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+            {
+                return sr.ReadToEnd();
+            }
+        }
+
 
         public static string PerformGetWithNOCookies(string url)
         {
@@ -102,7 +118,7 @@ namespace MISFIT
             HttpWebRequest web = (HttpWebRequest)HttpWebRequest.Create(url);
             web.UserAgent = Globals.GetUserAgentString();
 
-            // By using the "private _cookieJar", the cookies are saved inbetween web requests, thereby saving our session.
+            // By not using the "private _cookieJar", the cookies are not saved inbetween web requests, thereby not saving our session. :)
             WebResponse response = web.GetResponse();
 
             using (StreamReader sr = new StreamReader(response.GetResponseStream()))

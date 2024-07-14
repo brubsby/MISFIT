@@ -86,6 +86,8 @@
             this.theGPU272ProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mersenneUncreditedStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mersenneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mersenneMISFITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.issueReportMISFITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.codeLibrariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mfaktCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mfaktOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -577,6 +579,8 @@
             this.theGPU272ProjectToolStripMenuItem,
             this.mersenneUncreditedStatsToolStripMenuItem,
             this.mersenneToolStripMenuItem,
+            this.mersenneMISFITToolStripMenuItem,
+            this.issueReportMISFITToolStripMenuItem,
             this.codeLibrariesToolStripMenuItem,
             this.leaderboardsToolStripMenuItem,
             this.toolStripSeparator1,
@@ -625,6 +629,20 @@
             this.mersenneToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.mersenneToolStripMenuItem.Text = "Mersenne forum";
             this.mersenneToolStripMenuItem.Click += new System.EventHandler(this.mersenneToolStripMenuItem_Click);
+            // 
+            // mersenneMISFITToolStripMenuItem
+            // 
+            this.mersenneMISFITToolStripMenuItem.Name = "mersenneMISFITToolStripMenuItem";
+            this.mersenneMISFITToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.mersenneMISFITToolStripMenuItem.Text = "MISFIT subforum";
+            this.mersenneMISFITToolStripMenuItem.Click += new System.EventHandler(this.mersenneMISFITToolStripMenuItem_Click);
+            // 
+            // issueReportMISFITToolStripMenuItem
+            // 
+            this.issueReportMISFITToolStripMenuItem.Name = "issueReportMISFITToolStripMenuItem";
+            this.issueReportMISFITToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.issueReportMISFITToolStripMenuItem.Text = "Report MISFIT issues";
+            this.issueReportMISFITToolStripMenuItem.Click += new System.EventHandler(this.issueReportMISFITToolStripMenuItem_Click);
             // 
             // codeLibrariesToolStripMenuItem
             // 
@@ -1285,6 +1303,8 @@
         private System.Windows.Forms.ToolStripMenuItem gIMPSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem theGPU272ProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mersenneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mersenneMISFITToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem issueReportMISFITToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mersenneUncreditedStatsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem systemInfoToolStripMenuItem;
         private System.Windows.Forms.Timer timer2;

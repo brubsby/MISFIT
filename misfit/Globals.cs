@@ -13,9 +13,16 @@ namespace MISFIT
 
 	public class Globals
 	{
+        // eg. MISFIT 2.11.1 would be 2 11 01 99 for the different version segments, 99 for a release version to preserve precedence,
+        // e.g.:
+        // 2.11.1-alpha   is  2 11 01 00
+        // 2.11.1-alpha.1 is  2 11 01 01
+        // 2.11.1-beta.3  is  2 11 01 13
+        // 2.14.12        is  2 14 12 99
+        // and so on and so forth
 
-        public const string VERSION_MISFIT_STRING = "MISFIT 2.11.0"; //2 06 02 00  <- 7 numbers
-        public const int VERSION_MISFIT_INT = 2100001;   //must be 7 numbers
+        public const string VERSION_MISFIT_STRING = "MISFIT 2.11.1-beta";
+        public const int VERSION_MISFIT_INT = 2110111;   //must be 7 numbers
         private ArrayList _DaysOfWeekList = new ArrayList();
         private DateTime _MISFITstartUpTime;
 
@@ -105,7 +112,8 @@ namespace MISFIT
 		public const string URI_GIMPS_STATS_TOP_LLDC = "https://www.mersenne.org/report_top_500_LLD/";
 		public const string URI_GIMPS_EXPONENT_HISTORY = "https://www.mersenne.org/report_exponent/?";
 		public const string URI_GIMPSca_EXPONENT_HISTORY = "http://www.mersenne.ca/exponent.php?exponentdetails=";
-        public const string URI_MISFIT_DOWLOADS_PAGE =  "http://www.mersenneforum.org/misfit/downloads/MISFIT";
+        public const string URI_MISFIT_DOWLOADS_PAGE = "https://github.com/brubsby/MISFIT/releases";
+        public const string URI_MISFIT_LIST_RELEASES_API = "https://api.github.com/repos/brubsby/MISFIT/releases";
 
 
         
