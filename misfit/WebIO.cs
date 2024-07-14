@@ -152,10 +152,8 @@ namespace MISFIT
 
 
 
-        public string GetWorkGIMPS(string userName, string password, int? assignments, int? assignmentsGHZ, GIMPSWorkPreference workPref, int? expStart, int? expEnd, GIMPSWorkPreference2 workPref2, int? factorTo)
+        public string GetWorkGIMPS(int? assignments, int? assignmentsGHZ, GIMPSWorkPreference workPref, int? expStart, int? expEnd, GIMPSWorkPreference2 workPref2, int? factorTo)
         {
-            LoginGIMPS(userName, password);
-
             string url = "https://www.mersenne.org/manual_gpu_assignment/?" +
                   "&num_to_get=" + assignments +
                   "&ghz_to_get=" + assignmentsGHZ +

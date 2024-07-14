@@ -20,7 +20,7 @@ namespace MISFIT
             string response = myWebIO.LoginGIMPS(userid, password);
             Globals.LogWebIO("GIMPSLOGINFETCH", response, Globals.FILE_EXT_HTML);
 
-            if (response.ToUpper().Contains(userid.ToUpper() + " LOGGED-IN"))
+            if (response.ToUpper().Contains(userid.ToUpper() + " SUMMARY"))
             {
                 return true;
             }
@@ -31,16 +31,15 @@ namespace MISFIT
             }
 
         }
-        
-        
+
         
         public static List<string> FetchWork(int number, string userid, string password)
         {
             string response = string.Empty;
             List<string> AssignmentList = new List<string>();
-
-            WebIO webIO = new WebIO();
-            response = webIO.GetWorkGIMPS(userid, password, number, null, WebIO.GIMPSWorkPreference.WhatMakesSense, null, null, WebIO.GIMPSWorkPreference2.WhatMakesSense, null);
+            WebIO myWebIO = new WebIO();
+            Gimps.LoginGimps(userid, password, myWebIO);
+            response = myWebIO.GetWorkGIMPS(number, null, WebIO.GIMPSWorkPreference.WhatMakesSense, null, null, WebIO.GIMPSWorkPreference2.WhatMakesSense, null);
             Debug.WriteLine(response);
             Globals.LogWebIO("GIMPSASSIGNMENTSFETCH", response, Globals.FILE_EXT_TXT);
 
@@ -60,16 +59,6 @@ namespace MISFIT
         }
 
 
-
-
-
-
-
-
-
-
-   
-
         private static string ParseFactorsFromHTML(string html)
         {
             const string BeginBlockMarker = "<!--BEGIN_ASSIGNMENTS_BLOCK-->";
@@ -78,11 +67,11 @@ namespace MISFIT
 
             if (html.Contains(BeginBlockMarker) && html.Contains(EndBlockMarker) && html.Contains(Globals.PHRASE_WORKTODO_EXPONENT_ROW) /*&& html.Contains(UserValidationPhrase)*/)
             {
-                html = html.Replace("\n", "\r\n"); //remove the unix style terminator and add a windows CRLF terminator
                 int startIndex = html.IndexOf(BeginBlockMarker) + BeginBlockMarker.Length;
                 int endIndex = html.IndexOf(EndBlockMarker);
-                html = html.Substring(startIndex, endIndex-startIndex);
+                html = html.Substring(startIndex, endIndex - startIndex);
                 html = html.Trim();
+                html = html.Replace("\n", "\r\n"); //remove the unix style terminator and add a windows CRLF terminator
                 Debug.WriteLine("new factors html " + html);
             }
             else
