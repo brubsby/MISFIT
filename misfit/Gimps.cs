@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
 
 namespace MISFIT
 {
@@ -15,7 +17,7 @@ namespace MISFIT
         public const string ERROR_NO_ASSIGNMENTS_PARSED = "HTML payload was unusable. See web log for details";
 
 
-        private static bool LoginGimps(string userid, string password, WebIO myWebIO)
+        public static bool LoginGimps(string userid, string password, WebIO myWebIO)
         {
             string response = myWebIO.LoginGIMPS(userid, password);
             Globals.LogWebIO("GIMPSLOGINFETCH", response, Globals.FILE_EXT_HTML);
@@ -84,21 +86,13 @@ namespace MISFIT
 
         }
 
+        public static string ReportWork(string fullFilename, WebIO myWebIO)
+        {
+            string response = string.Empty;
+            response = myWebIO.UploadResultsFileToGIMPS(fullFilename);
+            Debug.WriteLine(response);
+            return response;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
-           
-      
     }
 }

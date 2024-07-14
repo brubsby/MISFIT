@@ -21,8 +21,8 @@ namespace MISFIT
         // 2.14.12        is  2 14 12 99
         // and so on and so forth
 
-        public const string VERSION_MISFIT_STRING = "MISFIT 2.11.1-beta";
-        public const int VERSION_MISFIT_INT = 2110111;   //must be 7 numbers
+        public const string VERSION_MISFIT_STRING = "MISFIT 2.12.0-beta";
+        public const int VERSION_MISFIT_INT = 2120010;   //must be 7 numbers
         private ArrayList _DaysOfWeekList = new ArrayList();
         private DateTime _MISFITstartUpTime;
 

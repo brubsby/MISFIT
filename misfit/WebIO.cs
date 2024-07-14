@@ -186,43 +186,31 @@ namespace MISFIT
             return PerformGetWithCookies(url);
         }
 
-
-
-        public static string UploadResultsFileToGIMPS(string fullFilename, string userID)
+        public string UploadResultsFileToGIMPS(string fullFilename)
         {
-            //in 2014 we'll call  //www.mersenne.org/manual_result/misfit.php?uid=swl551
-
             FileInfo fi = new FileInfo(fullFilename);
 
             StringBuilder postData = new StringBuilder();
 
-            //string url = "https://www.mersenne.org/manual_result/misfit.php?uid=" + userID +"&user_password="+password;
-            string url = "https://www.mersenne.org/manual_result/misfit.php?uid=" + userID;
+            string url = "https://www.mersenne.org/manual_result/";
             Debug.WriteLine(url);
 
             string boundary = "------------------------" + DateTime.Now.Ticks;
             string newLine = Environment.NewLine;
 
-            string propFormat = "--" + boundary + newLine +
-                   "Content-Disposition: form-data; name=\"{0}\"" + newLine + newLine +
-                    "{1}" + newLine;
-
             string fileHeaderFormat = "--" + boundary + newLine +
                         "Content-Disposition: form-data; name=\"{0}\"; filename=\"{1}\"" + newLine;
 
             HttpWebRequest web = (HttpWebRequest)HttpWebRequest.Create(url);
-            // web.CookieContainer = _cookieJar;
+            web.CookieContainer = _cookieJar;
             web.Method = WebRequestMethods.Http.Post;
             web.ContentType = "multipart/form-data; boundary=" + boundary;
             web.Accept = "text/html, application/xhtml+xml, */*";
             web.UserAgent = Globals.GetUserAgentString();
 
-
-            postData.Append(string.Format(propFormat, "MAX_FILE_SIZE%22", "1000000"));
-            postData.Append(string.Format(fileHeaderFormat, "file", fi.Name));
+            postData.Append(string.Format(fileHeaderFormat, "data_file", fi.Name));
             postData.Append("Content-Type: text/plain" + newLine + newLine);
             postData.Append(File.ReadAllText(fullFilename) + newLine);
-            postData.Append(string.Format(propFormat, "B2", "Upload"));
             postData.Append("--" + boundary + "--" + newLine);
 
             web.ContentLength = postData.Length;
@@ -242,6 +230,5 @@ namespace MISFIT
         }
 
 
-		
     }
 }

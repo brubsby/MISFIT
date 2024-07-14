@@ -89,20 +89,20 @@ namespace MISFIT
             {
                 case 0:
                     {
-                        if (stringToCheck.Contains(globals.cfg.settingGIMPSUserID + " LOGGED-IN"))
+                        if (stringToCheck.Contains(globals.cfg.settingGIMPSUserID.ToUpper() + "<BR>LOGGED IN"))
                             foundString = true;
                         break;
                     }
                 case 1:
                     {
-                        if (stringToCheck.Contains(globals.cfg.settingGIMPSUserID + " LOGGED-IN") && stringToCheck.Contains("PRIMENET REPORT MANUAL RESULT"))
+                        if (stringToCheck.Contains(globals.cfg.settingGIMPSUserID.ToUpper() + "<BR>LOGGED IN") && stringToCheck.Contains("DID NOT UNDERSTAND 0 LINES"))
                             foundString = true;
 
                         break;
                     }
                 case 2:
                     {
-                        if (stringToCheck.Contains("RESULT WAS NOT NEEDED") || stringToCheck.Contains("ERROR CODE: 40"))
+                        if (stringToCheck.Contains("WAS NOT NEEDED") || stringToCheck.Contains("ERROR CODE: 40"))
                        // if (stringToCheck.Contains("ERROR CODE: 40"))
                             foundString = true;
                         break;
@@ -144,16 +144,17 @@ namespace MISFIT
 
 
 
-
         private void UploadFile(string fileName)
         {
-                string results = WebIO.UploadResultsFileToGIMPS(fileName, globals.cfg.settingGIMPSUserID);
-                Globals.LogWebIO("GIMPSRESULTSUPLOAD", results, Globals.FILE_EXT_TXT);
-                if (!CheckForString(StringCheckItem.Crediting, results))
-                    throw new Exception("GIMPS response was unexpected! Check WEB_LOGS for details."); 
+            WebIO myWebIO = new WebIO();
+            Gimps.LoginGimps(globals.cfg.settingGIMPSUserID, globals.cfg.settingGIMPSPassword, myWebIO);
+            string results = Gimps.ReportWork(fileName, myWebIO);
+            Globals.LogWebIO("GIMPSRESULTSUPLOAD", results, Globals.FILE_EXT_TXT);
+            if (!CheckForString(StringCheckItem.UploadedResultsOK, results))
+                throw new Exception("GIMPS response was unexpected! Check WEB_LOGS for details."); 
                     
-                if(CheckForString(StringCheckItem.ResultWasNotNeeded, results))
-                      globals.LastGIOMUploadDetectedResultsNotNeeded=true;
+            if(CheckForString(StringCheckItem.ResultWasNotNeeded, results))
+                    globals.LastGIOMUploadDetectedResultsNotNeeded=true;
         }
 
         private void SignalOKToCloseForm(int delay)
