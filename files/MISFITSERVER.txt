@@ -1,0 +1,28 @@
+A remote server is defined by a path MISFIT monitors where the path is in UNC format. (start with \\SOME_MACHINE_NAME)
+MISFITserver.exe and SendCtrlCode.exe go on the remote server you want to control. 
+
+If MISFIT can already read and write to the remote PC's directories it should have no problem communicate with MISFITserver which run over Named Pipes.
+
+
+
+MISFIT server requires two command line arguments
+1. The name of a batch file to execute when it receives the START command
+2. The process name* to STOP,KILL or INQUIRE about.
+
+*Specify the name of a process running in memory that you want stopped. 
+
+The process name is a friendly name for the process, such as MFAKTO or MFAKTC, which does not include the .exe extension or the path. 
+
+TaskManager is useful in determining the process name if you don't know it.
+
+All processes with the same name will be stopped when executed. 
+
+Processes will be stopped by sending CTRL-C signal to their console. To accomplish this MISFIT calls the external program named SendCtrlCode.exe 
+which then sends the CTRL-C signal.
+
+
+
+
+
+
+

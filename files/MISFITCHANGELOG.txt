@@ -1,0 +1,635 @@
+VERSION 2.12.0
+1. Update GIMPs work fetching and reporting to use manual_GPU_assignment and manual_result pages, deprecating the misfit.php endpoint.
+2. Update links to HTTPS and updated URLS
+3. Add TBUSBY to contributors 
+
+VERSION 2.11.1
+1. Update .NET framework to 4.8 to bump TLS version and get mersenne.org communication working without regedit workaround
+
+VERSION 2.11.0
+1. Updated all mersenne.org urls to HTTPS
+2. changed userAgent to MISFIT xx.xx.x   where x is the version number string. This will allow web operators to block old versions if desired
+3. removed password from GET when interacting FETCHING or REPORTING work.
+
+VERSION 2.10.1
+1. Clarified menu option on how to scrub duplicates
+2. fixed a few forms that allowed resizing when they were supposed to be fixed size
+3. Increased Work Fetching Maximum Pledge from 80 to 100
+4. Reduced mininum WorkFetch from 100 to 25
+5. Fixed bug where WorkBalance would always default to 5 even if you had set it below 5
+6. Added an interactive "Retry" button to GIOM if it failed to upload results to GIMPS
+7. Fixed control limit for Max GHzDs during drain. Upped from 2000 to 8000
+
+
+
+VERSION 2.10.0
+1. Added a new report showing all "Recent Results Uploads"
+2. Added configuration to push work assignments into WorkToDo.add instead of WorkToDo.txt 
+	Note: The existence of a WorkToDo.add is a blocking condition and MISFIT will not add more work to an existing .ADD file
+		  This block also applies to Wrapping-up processing and balancing work.
+		  MISFIT will display errors if it collides with an .ADD file
+    Note: As of this writing if mfaktc exhausts all work from WorkToDo.txt it will gracefully end. 
+	The problem is that upon restart it does not inbound work that might be waiting in a .ADD file and exits with protest that no work is available.
+	
+	****
+	The default interval for mfaktc to fully process an .ADD file is 20 minutes which increases the likelihood of this condition occurring.	
+	If it happens then you will have to manually move rows into WorkToDo.txt
+	***** 
+	
+	The shortest possible .ADD process cycle is 1 minute. See mfaktc.ini for more information on WorkFileAddDelay
+
+VERSION 2.9.5
+1. Fixed the time calculation when pressing SHIFT-F4 to be the desired 4 hours.
+2. Added feature to "Export Results" to upload results when the only results are previously staged file(s) in GIOM_STAGED that were not uploaded during a normal upload process.
+
+VERSION 2.9.4
+1. Fixed bug where statistics were not being automatically re-calculated during the "Results Export process"
+2. Added a confirmation dialog to confirm unloading a custom schedule
+
+VERSION 2.9.3
+1. Improved the speed of calculating Productivity Statistics when there are lots of files to parse.
+2. Added a calendar/time control to the Suspend Automation feature allowing the selection of a specific date time to resume operations.
+3. Added speed keys to invoke Automation Suspension durations.
+
+
+
+VERSION 2.9.2
+1. More clean up of menus
+2. Minor fixes
+
+
+VERSION 2.9.1
+1. Fixed a formatting bug on default schedule if the minute was a single digit. (leading 0 was left off)
+2. Added usage of F keys to control some common tasks.
+
+
+VERSION 2.9.0
+1. Implemented new scheduling features. (see help in the scheduler config menu for all the details)
+	1.1  The old schedule section from your existing MISFITconfig.txt is not compatible with the new vision and you will have re-define your schedules. MISFIT will default to results uploading every 4 hours if you don't define your own schedule.
+2. Removed the leaderboard. Now that GIMPS site is very fast AND actually limits the TOP_500 producers to 500 results there is no need for MISFIT to build a cached version of the leaderboards.
+3. Removed the WorkToDo search form since the "View All Work" feature is vastly superior.
+4. Removed the ability to send productivity statistics before results uploading since it generated too many emails. (It remains intact when fetching work which is when a review of your statistics is more meaningful)
+5. Removed "Monitor Mode" functionality.
+6. Fixed bug where clicking EXIT caused MISFIT to minimize to system tray.
+
+
+VERSION 2.8.2
+1. Fixed missing "Export to URL" feature that was lost during re-write of the EXPORT function.
+
+
+VERSION 2.8.1
+1. Fixed problem with holding results back when MISFIT is managing more than one directory.
+2. Fixed problem with Wrap-Up feature giving error message.
+
+VERSION 2.8.0
+1. Added the ability to hold back completed results for an exponent if a bit level is still being processed. This will ensure GIMPS only gets results when the entire pledge is completed. Default is ON.  Results that are held back during an export are logged for forensic purposes.
+
+2. Improvements to logging
+	2.1 An improved naming convention where instead of random GUIDS all file names now contain an embedded DateTime.Now.ToFileTimeUtc().ToString() component
+	2.2 File name prefixes have been clarified
+	2.2.1 COMBINED-RESULTS* now have the name RESULTS_EXPORTED*   
+	(This file name change means old files are not used in the productivity calculations unless you manually rename them)
+	 use the command line rename utility to manually fix {ren MISFITbackups\COMBINED-RESULTS* RESULTS_EXPORTED*}
+
+3. For forensic purposes the error form now logs all text to MISFITbackups\ERROR_FORM_* 
+
+4. Lots of code cleanup
+
+5. The leaderboard is turned off until GIMPS site can provide structured data for me to process.
+
+
+VERSION 2.7.8
+1. Fixed some minor label layout issues where labels overlaid each other
+2. re-compiled for .NET 4.0 instead of 4.5.1
+VERSON 2.7.7
+1. Fixed problems with leader board caused by changes to the GIMPS site
+2. Increased the Wrap Up Processing maximum rows from 10 to 25
+3. Updated some links found under the Links menu
+
+VERSION 2.7.6
+1. Tuned the LOCKING feature to better deal with conditions where the OS has not released it's handles to open files
+
+2. Work Balancing can now be set to values lower than 5, however using low values may cause frequent re-balancing that provide no benefits. You should only use very low values of you are sure you fully understand your factoring plan.
+
+
+VERSION 2.7.5
+1. Fixed bug that send STALL alarm even if STALL detection was suspended or turned off
+
+VERSION 2.7.4.3
+1. ***Dramatically*** simplified the code for Stalled Process Detection.. (Funny how you look back on code and ask..."What was I thinking!")
+2. There is now only one setting for Stalled Process Detection. You must change it if you don't want the default of 35 minutes.
+3. Add new Stall Detection menu which can be found under "Process Control".
+4. Fixed a few unhandled exceptions when sending emails with a broken SMTP connection.
+5. Add WARNING information to the Wrap-Up email if WorkToDo is not 0 bytes at termination.
+6. More code cleanup.
+
+
+VERSION 2.7.3
+1. Added configuration and feature allowing the results upload screen (GIOM) to send an email if it remains open for > 60 minutes.
+
+VERSION 2.7.2
+1. Added options to Wrap-Up feature (Upload Results, Send Completion Email, Execute WrapUp.bat)
+2. minor code clean up.
+
+VERSION 2.7.1
+1. Added restriction to prevent Wrap-Up from changing WorkToDo files in remote directories.
+2. Fixed bug in Work Report if MISFITWorkToDo.txt did not exist
+3. Added a DoEvents inside the Wrap-Up MFAKTx polling loop so Windows would not show MISFIT as (Not Responding) 
+
+VERSION 2.7.0
+1. Added back the configuration to store GIMPS password.
+2. Modified MISFTI to always send user_password to GIMPS fetch/results pages. If/when these pages check user_password is up to George
+3. Modified GIOM error message when something goes wrong uploading results --> (GIMPS response was unexpected! Check WEB_LOGS for details.)
+4. Removed the graphical progress bar that was used to represent "remaining work". It was built long before automatic fetching and has no real value anylonger.
+5. Add new feature to WRAP-UP processing. (Found under Processing menu)
+Scenario: You need to use your PC or just want to shut it down, but you want a logical stopping point in your work before stopping MFAKTx. Using Wrap-Up you can pick how many factors you want each instance to process before running out of work.
+
+Once Wrap-up mode begins MISFIT stops all standard automation tasks and locks out all user inputs. It then copies all Factor Rows that won't be processed to WorkToDoSuspended.txt in each worker directory. It now begins polling for active instances of MFAKTx, and when none are left running (they gracefully ended because WorkToDo.txt was emptied) it performs a results upload and MISFIT exits. Optionally MISFIT can execute "WrapUp.bat" before exiting which allows for highly customized Wrap-Up steps.
+
+Later... When MISFIT is restarted it checks for WorkToDoSuspended.txt and if it exists MISFIT copies all its content into WorkToDo.txt. As a safety check it WorkToDo.txt must be 0 bytes (the expected state of an emptied file). If the file is greater than 0 bytes MISFIT gives error and exits as it cannot safely assume what to do when this fail-safe condition exits.
+
+6. Lots and Lots of code clean up! 
+
+
+
+VERSION 2.6.4
+1. Converted GIMPS "work fetching" to fetch from the dedicated (misfit) page George created. This page dramatically improves fetching performance!
+	1.a The new assignments page will not process unless a valid UID (userID) is provided. 
+2. Removed the collection and storage of GIMPS password since the new pages (assignments,results) only require UID (userID). 
+3. Fixed bug where the subject line for ALERT PANEL being open was accidently hard coded instead of using the configured subject line.
+4. Changed time Alert Panel needs to be open for email to be send from 30 minutes to 60 minutes.
+
+VERSION 2.6.3
+1. Added automatic opening of URL to MISFIT downloads if Version Check finds a newer verison.
+VERSION 2.6.2
+1. Added feature where you can check the http://mersenneforum.org/misfit/downloads/MISFIT/ page for a newer version.  (probably should have built that along time ago!)
+VERSION 2.6.1
+1. Converted results uploading to use the new page manual_results\misfit.php which provided fast, streamlined results uploading
+2. Fixed a problem in the Leaderboard when a userName contains the | character. 
+3. Added configuration allowing an email to be sent if the ALERT PANEL remains open for > 30 minutes (disabled by default)
+4. Fixed a bug introduced in 2.6.0 where frmSafeErrorDailog incorrectly set Timer1.Interval=0 instead of Timer1.Enabled=false inside the CATCH block of the page's exception handler.
+
+
+VERSION 2.6.0
+***private release (no notes)
+
+
+VERSION 2.5.10
+1.Added startup detection of missing MISFIT directories
+
+
+VERSION 2.5.9
+1. Improved GIMPS I/O Manager (GIOM) results uploading : In the event of a multi-file upload the files are now uploaded in chronological order of creation. This would only happen if greater than one file exports were processed while connectivity to GIMPS server was compromised. NOTE this feature is implemented by changing the combined results filename, found in GIOM_STAGED, from a random GUID to FileTimeUTC + 5 random chars.  In other words the filename is a string representation of the time it was created with a random component to prevent collisions. When GIOM loads it sorts the file list and they are now uploaded in chronological order.  This change may resolve the occasional "RESULTS NOT NEEDED" response from GIMPS if out of order exponent reporting is in-fact a problematic condition. (others can debate if that is fact or fiction, but this is logical and came from user suggestion.)
+
+VERSION 2.5.8
+1. Changed updated the MISFIT support email address to MISFIT.SUPPORT@OUTLOOK.COM
+2. Additional small fixes
+3. Project is now in Visual Studio 2013 and latest release compiled in VS2013
+VERSION 2.5.7
+***private release (no notes)
+VERSION 2.5.6
+1. Added option to have Stalled Process Detection suspended on startup. This is useful if you have scheduled start/stop events and MISFIT is starting up but the next scheduled start event's time is greater than the Stalled Process Detection threshold.
+2. Added ability to resume Stalled Process Detection regardless of what triggered the suspension. A warning is provided if trying to resume when no MFAKTx instances are running.
+3. Added CurrentGHzDaysWorkToDo and StagedGHzDaysWorkToDo to the productivity reports
+4. Fixed some minor UI bugs when MISFIT is put into MONITOR MODE
+
+
+VERSION 2.5.5.1
+1. Fixed limitation of working WorkToDo.txt files with greater than 32767 rows. Functionality confirmed with 102,696 rows in a single file. <Thx to NormanRKN for highlighing this limitation and testing the fix>
+
+VERSION 2.5.5	
+1. Added more error messages if errors occur during initial loading of files
+2. Fixed a bug where productivity data is trying to be loaded before the directory exists. This would only occur during initial setup.
+
+VERSION 2.5.4
+1.All email subject lines are now configurable
+
+VERSION 2.5.3
+1. Improved detection and error dialog if GPU72 returns HTML without usable factor rows in it.
+
+
+VERSION 2.5.2
+1. Fixed bug where a STALL process alarm would fire even if the process was stopped as part of the scheduler. 
+additional tweaks that came out of #1
+2. A scheduled START will enable monitoring (if process monitoring is turned on in main configuration)
+3. From the process menu a SEND CTRL-C event will disable monitoring (if process monitoring is turned on in main configuration)
+4. From the process menu a START process event will enable monitoring (if process monitoring is turned on in main configuration)
+
+
+
+
+
+
+
+
+VERSION 2.5.1
+1. Added option to show productivity as averages for the 7 and 30 day periods
+
+
+VERSION 2.5.0
+1. Added productivity information showing GhzDays Credit for completed work.  
+	Data Calculated:
+	a.Last Upload
+	b.Last 1 day
+	c.Last 7 days
+	d.Last 30 days
+
+This productivity information is available in four locations
+	a. On the main form (sans the 30 day data)
+	b. As part of the hover-over when minimized to sysTray (sans the 30 day data)
+	c. As part of the Global Work Report
+	d. From the menu Operations|Show Productivity Statistics
+
+The data is gatherd from the MISFITbackups\Combined-Results*.txt files and is refreshed under the following conditions
+	a. On application startup
+	b. Whenever work is Exported via button or automation. (actual upload does not have to occur for data to be cataloged)
+	c. Whenever the menu Operations|Show Productivity Statistics is used.
+
+A few notes:
+1. MISFIT log purging less than 30 days will impact the calculations as data will be partial.
+2. It cannot account for situations where GIMPS did not give you credit for work submitted (this should be so rare (never) that it will not mess up your metrics)
+3. Data is gathered by reading from files. The more files the more I/O operations. If you do hourly uploads and don't purge your logs for a year you may actually notice a delay when MISFIT starts up. (with 30 days worth of files I/O time is around 0.071 seconds for a 7200k rpm drive on an i7)
+	
+
+VERSION 2.4.10
+1. Automated results uploading now allows intervals as low as 1 hour.
+2. Added detection and alerting if GIMPS determines "RESULT NOT NEEDED" (on by default)
+
+VERSION 2.4.9
+1. Fixed crash on startup of no instance paths were specified in the MISFITconfig.txt file
+2. Add "Tool Tips" to important buttons and controls to help clarify functionality
+
+VERSION 2.4.8
+Work calculator was changed to use NumericUpDown controls for bit level selection instead of ComboBoxes making implementation consistent.
+
+VERSION 2.4.7
+1. Stalled Process Detection now considers the LastWriteTime of both
+-the latest checkpoint file [expert knowledge of mfaktO/C is required to know if checkpointing can safely be turned off]
+and
+-results.txt
+
+When both stall out then the instance is declared stalled. It is recommended you stick with the stalled detection defaults of
+Minutes between checks=5;
+Number of times files detected stalled=3;
+
+2. The work calculator was enhanced to use EXPONENT, MIN and MAX bit levels. Using all three ensures proper calculations even when working the 100,000,000+ exponent range.
+
+
+
+
+VERSION 2.4.6
+1. Implemented GPU72 work fetching option #9 (Let GPU72 Decide) for LLTF and DCTF fetching. This feature puts all decisions, other than how much work to fetch, in the hands of GPU72.com.  Thanks to everyone who help guide in determining the final functionality for this feature.
+
+
+VERSION 2.4.5
+1.Implemented GhzDays work fetching from GPU72. (option to fetch by assignment count remains)
+2.Assigning of work is now done by GhzDays instead of count of assignments.
+3.Work calculator updated to support 1 & 2
+4.Clicking the Assign Work button now only assigns out the configured amount of GhzDays to assign out in one event.
+(previously it assigned out everything in staging file)
+
+
+
+
+
+
+Version 2.4.4
+1. Added purging of all MISFIT generated logs. Checking is performed roughly every six hours and is set and forget (cannot be triggered manually). Configured in the MISC tab. **GPU72FETCH_logs which is not part of MISFIT and not purged
+
+2. Added global exponent duplicate detection report. Detection is for everything in inventory, workToDo(s) and MISFITworkToDo files.  
+
+3. Added configuration to assess bit level as part of any duplicate detection procedure. It can turned on in the config|MISC tab.
+If bit level evaluation is turned on the following example assignments would NOT be considered as having duplicate exponents
+	55555544,71,72
+	55555544,72,73
+	55555544,72,75
+	55555544,75,45
+
+If bit level evaluation is enabled it will impact the results of the following procedures:
+a. global exponent duplicate report
+b. detecting duplicates during GridStatsUpdate
+c. detecting and tossing duplicates during WorkBalance 
+
+
+
+
+Version 2.4.3
+1. Added logging of the raw HTML from a GIMPS fetch.
+2. Added detection and alerting if no assignments returned from GIMPS/GPU72 where no I/O error occurred. (fetch log file will show what actually happened)
+3. Global Work Report is now always generated PRE-work fetch and PRE results upload. The reports are stored in the WEB_LOGS directory. Emailing of the reports is optional.
+4. Removed prototype allowing random determiniation of GPU72 work types to fetch.
+5. Significant retesting and additional minor tweaks related to proper form sizing when OS display is set to scale over 100%
+
+
+
+
+
+Version 2.4.1
+1. Added ability to fetch DCTF work from GPU72
+2. standardized naming convention of the various files written to web_logs
+3. Fixed unhandled exception bug if form.resize event fired before classes were initialized in form.load.
+4. Fixed form to scale correctly if OS display is set to 125%.
+
+Version 2.4.0
+1. Full integration of GPU72 Work Fetching including Fallback feature.
+If fallback is configured and GPU72 responds to your work request with:
+	***No assignments available which match your criteria.**
+MISFIT will override your configured settings with defaults and re-request work. This is to ENSURE you never run out of work.
+
+
+2. Moved GIMPS work fetch out of GIOM and directly into main MISFIT functions. Much cleaner implementation and now GIMPS and GPU72 fetching follow identical IO and transformation functions.
+
+
+3. Added a Work Calculator to the Work Fetch Menu.  Designed to help you configure MISFIT so you don't run out of work!
+
+4. Added a FORCE work balance menu item that will execute a full re-balance regardless of if needed. The benefit is that the duplicate exponent tosser is also forced to run. Mostly a diagnostic type of feature.
+
+5. Directory GIOM_LOGS deprecated, but not removed, and is replaced with WEB_LOGS
+
+
+6. Changed the determination of when to fetch work from the number of rows in MISFITworkToDo.txt to the calculation of GhDz remaining in said file. This provides a much better method for calibrating the balance between work consumption and work fetching. This should help you in determining if you are fetching work in suitable quantities to have a several day reserve. [hint hint, several day reserve!]  Use the Work Calculator to assist in finding the right configuration settings.
+
+
+7. Added file-locking to all I/O scenarios where MISFITworkToDo.txt is involved. A few conditions didn't have locking and that was OK when it was only possible to load the MISFITworkToDo.txt via the UI. Now with randomly timed fetching threads adding work to the file it was at risk of an un-handled IO collision. 
+
+
+8.Added LLDC stats to the Leaderboard
+
+9. Added option to email Global Work Stats prior to Auto Results Uploading
+MISFIT Global Work Status Report
+****** REMAINING WORK INFORMATION ******
+GhDzToDo:2,138.949
+ExpRows:119
+StgdRows:72
+StgdGhDz:554.715
+****** COMPLETED WORK INFORMATION ******
+GhDzDone:346.121
+ExpsDone:83
+FactorsFound:1
+ResultBytes:6403
+
+10. Improved the the usage of the Remote Control Panel.
+
+
+11. An improvement to the encryption key generation was done which will make MISFIT unable to decrypt your existing version 2.3.x SMTP, GIMPS passwords. Once re-encrypted with 2.4.x you cannot go back to 2.3.x without reconfiguration. Backup your MISFITconfig.txt if you before running 2.4.x.
+
+12. Cleaned up Operations menu by removing items that already have buttons on the main form.
+
+
+VERSION 2.3.2
+1. Added code to release a lock from a file if the ".lck" file is > 15 mins old.  This will prevent stale locks from hindering unattended operations. 
+
+
+
+VERSION 2.3.1
+1.Added ability to pass command line arguments to the "Pre-Assign Work" command. This negates the need for a batch file in many cases.
+
+
+VERSION 2.3.0 
+1. version 2.3.0 the focus is on preventing IO with GIMPS during peak times. I have defined peak time (in my code) as 2 mins before the hour to 10 mins after the hour (UTC).
+
+During this restricted window anything done via button clicks will get a dialog error indicating cannot perform task during peak time.
+
+For automation it is more complicated.
+Schedule exports/uploads can no longer be scheduled during that time frame. Existing schedule will be challenged during startup and you'd have to reschedule.
+
+Time interval based exports/uploads will auto delay to past the restricted window if the event occurs within the restricted window.. this will cause the timer to drift past the window and future uploads won't fall in the window at all.
+
+GIOM retries (if GIMPS is down) will also auto delay to past the restricted window if the event occurs within the restricted window. So if you have a schedule upload at 3:30 and it fails due to some primenet problem it retries every 30 mins. this puts the next retry right at peak time (4:00). In this case GIOM will delay that retry to after peak time.
+
+In all automation scenarios the delay past peak time is randomized between 0 and 5 minutes. This delay is to prevent the thousands of MISFIT instances from uploading results at the same time after the peak window has passed.
+
+
+2. Ability to stage work in bulk and have it drained only when GHZDaysToDo drops below threshold. In addition the number of factor rows to assign out in one event can be controlled.  In the process thread AutoAssignWork occurs before AutoBalanceWork so balancing of newly assigned work can occur in harmony with assigning work if you have AutoBalanceWork turned on. The last feature is the ability to execute a custom program prior to assigning of work. The call to the custom program is a blocking call an the exit code is retrieved. If the custom program fails to start an expection is thrown and the AutoAssignWork will *not* complete. The return code can be emailed to you to help monitor any issues when you are away from your computer.
+
+3. Ability to automatically fetch work from GIMPS. On an hourly basis MISFIT will check the number of rows left in MISFITworkToDo.txt and if below threshold will fetch work directly from GIMPS.
+
+
+4. Minor tweaks and fixes no one will ever notice.
+
+
+
+VERSION 2.2.7
+1. Leaderboard now allows selection of GIMPS_OVERALL and GIMPS_TF statistics
+
+
+VERSION 2.2.6
+1.Enabled new feature allowing Direct Selection of instances to balance work between.  Just click the instances you want to balance in the grid and then right click.  Use CTRL key to select not contigious blocks and SHIFT for contigious blocks. (standard windows keys). This feature is independent of auto-balancing or clicking the "Balance All" button. Depending on your needs you may use all, none of just one of the three balance invokers.
+
+
+2. Minor tweaks.
+
+
+
+VERSION 2.2.5
+1.Further restricted MONITOR MODE from editing files
+2.Added FLASH report. Combines all workToDo data with data created by the MigrateGIOMsent2CSV utility into a single CSV file. This is useful for research.
+
+VERSION 2.2.4
+1. Add information in the lock-file indicating it was created by MISFIT.
+
+VERSION 2.2.3
+1. Removed a test configuration left in code that set the auto-export timer elapsed by 1 hour on initial startup, which would trigger an export  1 hour ahead of schedule. (only the first time though)
+
+
+VERSION 2.2.2
+1. Fixed bug where EXPORTING results did not clean up file locks if there were not results to export
+2. Fixed bug where ASSIGNING work called updateGridStats before cleaning up file locks resulting in Error Stating workToDo was locked but lock-report showed no locks.
+
+
+VERSION 2.2.1
+1. Switched exception handler in UpdateGridStats to use the Alert Panel instead of a modal dialog box.
+
+
+
+VERSION 2.2.0
+1. Implemented mfaktO style '.lck' file locking system.
+The following MISFIT actions execute file-lock-management (detection, retry, assertion, cleanup)
+	UPDATE STATS
+	ADD WORK	
+	ASSIGN WORK
+	BALANCE WORK
+	EXPORT RESULTS
+	EDITING FILES (BUILT IN EDITOR ONLY)
+	SEARCHING WORKTODO
+	WORKTO REPORTS
+	RESULTS REPORTS
+
+In a typical MISFIT installation there is more than one directory containing files that need file-lock-management therefore whenever executing an action that requires file-lock-management MISFIT treats the entire set as one. If any one of the files has a lock collision or hard error the entire set is rolled back out of the locked state. (think database transactions /commit /rollback) and MISFIT aborts further processing.
+
+An example would be you have 8 directories and you want to assign work out to them. MISFIT starts locking each workToDo.txt in each directory. If directory 6 encounters a lock collision and the wait_timeout is exceeded try to apply a lock to workToDo (in directory 6) then MISFIT rollsback (unlocks) all the workToDo files it succesfully locked in directories 5,4,3,2,1 and aborts further processing.
+
+LOCKING always executes a retry loop if there is an existing lock on a file (LOCK_COLLISION). The retry loop last up to 10 retries with SLEEP(100ms * RETRY_COUNT) between each retry. If the counter reaches 10 then LOCK_COLLISION is terminal and MISFIT aborts further processing.  If the locks is released by the "other program" during the retry loop MISFIT will then assert the lock and continue processing.
+
+Menu items for LOCK management are included to forcibly apply/remove/report on systemwide locks.
+
+
+On a special note: Currently ONLY MFAKTO implements the '.lck' file locking system.
+
+How to test with MFAKTO:
+	Stop your MFAKTO instances. 
+	Use the menu item to "Apply systemwide file-locks"
+	Start MFAKTO
+	Observe MFAKTO's response to the file-locks
+	Use the menu item to "Remove systemwide file-locks"
+	Observe MFaKTO's response once the locks are removed.
+
+
+Unlike MFAKTO which will wait forever for a lock to be released, MISFIT is a UI driven application and waiting forever is unsuitable as MISIT has many tasks to perform at any given time. If a process is aborted due to a lock collision it can be re-executed at a later time. Remember most lock conditions last about .25 seconds so allowing MISFIT to wait a max of 5.5 seconds for a lock to be released is very tolerant and suitable to UI.
+
+Enjoy.
+
+
+
+
+	
+
+
+VERSION 2.1.2
+1.Changed duplicate exponent checking to include the bit level as part of the evaluation
+
+Factor=2012-11-28,74680841,72,73
+Factor=2012-11-28,74680841,72,75 
+
+would no longer be considered duplicate.  (always be careful if you fiddling your bits!)
+
+
+2.Tightened up some interval configurations to prevent certain events from occurring too frequently.
+
+
+
+
+
+VERSION 2.1.0
+1. Added configuration to display the "working" factor column based on phases. This is the default method of operation for mfaktO/C. See their readme for more info. 
+
+When showing factors in phases the format is
+working_range|max_bit_level|exponent
+
+When showing factors without phases the format is
+full_range|exponent
+
+2. Complete re-write of balance work process to simplify code, reduce IO times, and improve error detection and reporting.
+
+3. Added menu option to view GIOM log directory
+
+4. Added ability to dbl-click mfaktX locations which then opens Windows Explorer for that directory.
+
+
+
+
+VERSION 2.0.10
+1. Modified the alerting regarding GHZdayWorkToDo.  The determination to send an email in response to a low work condition is now the secondary method of alerting. The primary method is now a dialog message. Sending email is optional.  Since the previous implementation was ambiguous you will have to go into the configuration and re-select your preferred options.
+
+VERSION 2.0.9.2
+1. Added Exclamation Sound and blink red every 60 seconds to Error Dialog.
+
+2. fixed bug where stalled instance cell being red was lost at next updateGridStats
+
+
+VERSION 2.0.8.2
+1. Added duplicate exponent detection to the UpgradeGridStats function. Will show any duplicates. 
+
+
+
+VERSION 2.0.8.1
+1. Added detection of unexpected modifications (writes) to workToDo.txt files during Balance.  This would be possible if mfaktO/C modified the file after the balance process started. An error dialog is shown with the file that had the collision. If you ever see this error let me know.
+
+2. The entire HTML response received from GIMPS during GIOM events is saved in the GIOM_LOGS directory. This will allow you to verify what happened during an IO event.. Useful for research.
+
+3. GridStats "Working" column no longer assumes the factor is done in stages so it just shows the exact value found in the top row of workToDo file.
+
+4. Ability to view all results in a consolidated file. Useful for research
+
+
+VERSION 2.0.7
+1. Add "Working" column to gridStats to show the top row of each workToDo file.  Dbl-click the cell to see information on the exponent.
+
+2. Renamed column labels to reclaim space required for new "working" column
+
+3. STALL detection now turns the stalled instance cell red to improve ability to identify stalled instances.
+
+4. Double click on a person (row) on the Leaderboard and that person become the focus and the board is recalculated based on this person's postion.
+
+5. Ability to view ALL work in a consolidated file. Useful for research.  
+
+
+
+VERSION 2.0.6
+1. Fixed condition where you could not add UPLOAD_RESULTS events if you did not have process START/STOP control configured.
+
+
+
+VERSION 2.0.5
+1. Main grid allows for column resize
+
+2. Implementation of remote reboot via remote control system. Requires MisfitSERVER 1.2.5.
+
+REBOOT-SAFE command only reboots remote if mfaktO/C instances are not running
+
+REBOOT-FORCE command signals any running mfaktO/C to stop and then issues reboot
+
+REBOOTS have a 30 second delay and write the event to the System Event Log indicating MISFIT server performed the reboot.
+
+3. Implemented UPLOAD_RESULTS to the EVENT SCHEDULING system. This allows you to have fixed schedule when results are uploaded compared to the generic interval timer. Only one method of auto uploading is allowed.
+
+**TRY NOT TO UPLOAD AT THE TOP OF THE HOUR AS PRIMENET IS VERY BUSY AT THAT TIME**
+**UPLOADING TOO OFTEN ADDS LOAD TO PRIMENET. EXECUTE AS FEW UPLOADS AS YOU CAN TOLERATE**
+
+
+4. Added FactorRows, FactorsDone, FactorsFound stats into the stats box on the main form. This information duplicates the "Totals" row in the stats grid but is useful if you have a long list of locations and the Total row is out of sight due to scrolling.
+
+
+
+
+
+VERSION 2.0.3 & 4 INTERNAL RELEASES. CHANGES ROLLED UP TO 2.0.5
+
+
+VERSION 2.0.2
+1. Removed left most empty cell from all grids
+2. Updated file backup routine to mark what event caused the backup to occur and where the file originated from
+
+
+
+VERSION 2.0.1
+
+1. Ability to apply a date stamp to a FACTOR row when using the "Add Work" screen.  For a GIMPS factor the GUID is replaced and for a GPU72 factor the N/A is replaced.
+
+2.If alerting on "low work" is enabled the GHZdzToDo label goes RED when the threshold is reached.
+
+3.The remote control grid was reduced in size for a more compact view.
+
+
+
+
+
+
+
+
+
+
+
+
+11/13/2012
+VERSION 2.0  - NEW CHANGE LOG
+
+1.Product rename from mfaktXapp to MISFIT (MfaktX Internet Service Function & Integration Tool)
+On startup of MISFIT.exe it will rename the legacy mfaktXApp files and directories to MISFIT files and directories
+
+2.New Error form for display of errors detected during UpdateGridStats. This form will allow UpdateGridStats to execute at each designated interval and log all errors detected in each cycle. Prior to this method of showing errors a modal dialog would block future cycles of of the core timer and prevent things such as Stalled Process Detection or Auto Results Uploading.
+
+3. A mode of operation called "Monitor Mode" which blocks MISFIT from making any file changes, export, uploads etc. It does allow UpdateGridStats and Stalled Process Detection make Monitor Mode ideal to run on a second PC in a GPU farm where its primary role is to monitor the primary PC that is running MISFIT in "Full Mode". Sort of like a monitor for the monitor.
+
+4. A "Force Stalled Process Test" which allows direct testing of stalled processes without waiting for the scheduler to execute the test. Very useful if you have corrected a stalled condition and want to verify MISFIT pulls out of the stall.
+
+5. New locaton for MISFIT library at http://www.mersenneforum.org/misfit/
+
+6. Prevention of running two instance of MISFIT on same PC. With the recent minimize to system tray accidental startup of multiple instances was common. 
+
+
+7.REMOTE CONTROL!  Here's the big one!!!
+I have developer MISFITserver.exe which runs on a remote PC and receives commands from MISFIT to control your instances of mfakto or mfaktc. The server responds to four commands: INQUIRE,START,STOP,KILL. Think GPU farms and you will understand the goal of MISFIT remote control.
+See the MISFITSERVER.TXT for more information.
+
+
