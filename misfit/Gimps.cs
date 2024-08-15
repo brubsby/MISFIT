@@ -22,7 +22,7 @@ namespace MISFIT
             string response = myWebIO.LoginGIMPS(userid, password);
             Globals.LogWebIO("GIMPSLOGINFETCH", response, Globals.FILE_EXT_HTML);
 
-            if (response.ToUpper().Contains(userid.ToUpper() + " SUMMARY"))
+            if (response.ToUpper().Contains(userid.ToUpper() + "<BR>LOGGED IN"))
             {
                 return true;
             }
